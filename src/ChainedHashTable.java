@@ -162,12 +162,26 @@ public class ChainedHashTable<K,V> implements HashTable<K,V> {
       } // if reporter != null
       throw new IndexOutOfBoundsException("Invalid key: " + key);
     } else {
-      Pair<K,V> pair = alist.get(0);
-      if (REPORT_BASIC_CALLS && (reporter != null)) {
-        reporter.report("get(" + key + ") => " + pair.value());
-      } // if reporter != null
-      return pair.value();
+
+
+      // while ((alist.get(i).key() != key) && i < alist.size()) {
+      //   System.out.println(i);
+      //   i++;
+      // } // while
+
+      for (int i = 0; i < alist.size(); i++) {
+        if (alist.get(i).key().equals(key)) {
+
+          Pair<K,V> pair = alist.get(0);
+          if (REPORT_BASIC_CALLS && (reporter != null)) {
+            reporter.report("get(" + key + ") => " + pair.value());
+          } // if reporter != null
+          return pair.value();
+         // return alist.get(i).value();
+        } // if
+      } // for
     } // get
+    return null;
   } // get(K)
 
   /**

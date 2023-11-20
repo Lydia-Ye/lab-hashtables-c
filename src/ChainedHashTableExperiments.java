@@ -31,7 +31,7 @@ public class ChainedHashTableExperiments {
 
     // Conduct some of the experiments
     // HashTableExperiments.matchingKeysExpt(pen, htab);
-    // HashTableExperiments.repeatedSetExpt(pen, htab);
+    HashTableExperiments.repeatedSetExpt(pen, htab);
     // HashTableExperiments.matchingSetExpt(pen, htab);
     // HashTableExperiments.multipleSetExpt(pen, htab);
     // HashTableExperiments.removeExpt(pen, htab);
